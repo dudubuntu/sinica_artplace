@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
 
-    'web'
+    'web',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,9 @@ MEDIA_ROOT = PROJECT_ROOT / 'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Cart Settings
+
+SESSION_CART_KEY = 'cart'
+
+# Cart Settings

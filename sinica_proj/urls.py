@@ -23,7 +23,8 @@ urlpatterns = [
     path('sinica/admin/', admin.site.urls),
     path('sinica/api-auth/', include('rest_framework.urls')),
 
-    path('sinica/api/v1/', include('web.urls')),
+    path('sinica/', include('web.urls')),
+    path('sinica/api/v1/', include('api.urls')),
 
 ] + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
