@@ -21,8 +21,8 @@ services:
             dockerfile: Dockerfile
         volumes:
             - ./Docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
-            - ./Docker/sinica_artplace/static/:/static/
-            - ./Docker/sinica_artplace/utils/media/:/media/
+            - ./Docker/sinica_artplace/sinica_proj/static/:/static/
+            - ./Docker/sinica_artplace/sinica_proj/media/:/media/
         links:
             - sinica_artplace_web
         ports:
