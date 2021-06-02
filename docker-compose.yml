@@ -1,0 +1,31 @@
+services:
+
+    sinica_artplace_web:
+        build:
+            context: ./Docker/sinica_artplace/
+            dockerfile: Dockerfile
+        command: ./entrypoint.sh
+        environment: 
+            - DJANGO_SUPERUSER_PASSWORD=1234
+            - DJANGO_SUPERUSER_USERNAME=admin
+            - DJANGO_SUPERUSER_EMAIL=mes.disco@gmail.com
+        volumes:
+            - ./Docker/sinica_artplace/:/usr/src/app/
+        ports:
+            - "8000:8000"
+
+
+    nginx:
+        build:
+            context: ./Docker/nginx
+            dockerfile: Dockerfile
+        volumes:
+            - ./Docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+            - ./Docker/sinica_artplace/static/:/static/
+            - ./Docker/sinica_artplace/utils/media/:/media/
+        links:
+            - sinica_artplace_web
+        ports:
+            - "80:80"
+        depends_on:
+            - sinica_artplace_web
