@@ -11,7 +11,40 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+          <!-- Пример заголовков на странице оплаты, которые вы можете показать пользователю -->
+          <h1>Название товара</h1>
+          <div>Цена: 1 руб.</div><hr>
+
+      <!-- Платежная форма
+          Эти поля обязательные, их нельзя удалять. -->
+          <form action="https://yoomoney.ru/eshop.xml" method="post">
+          <input name="shopId" value="впишите-сюда-значение-своего-shopId" type="hidden" required/>
+          <input name="scid" value="впишите-сюда-значение-своего-scid" type="hidden" required/>
+          К оплате<br>
+          <input name="sum" value="" type="number" min="1" placeholder="0.0" required><br><br>
+
+      <!-- Поле name="customerNumber" обязательное, его нельзя удалять.
+          По нему вы сможете понять, кто вам заплатил.
+          Вы можете назвать это поле как угодно. Например, вместо "Имя покупателя" написать
+          "Идентификатор плательщика", "Номер клиента", "Имя клиента" или "Номер заказа". -->
+          Имя покупателя<br>
+          <input required name="customerNumber" value="" size="64"/><br><br>
+
+      <!-- Эти поля можно убрать или переименовать.
+          Например, вместо "Телефон покупателя" написать "Цвет глаз" или "Номер автомобиля".  -->
+          Телефон покупателя<br>
+          <input name="custName" value="" size="64"/><br><br>
+          Адрес доставки<br>
+          <input name="custAddr" value="" size="64"/><br><br>
+          Эл. почта покупателя<br>
+          <input name="custEmail" value="" size="64"/><br><br>
+          Комментарии к заказу<br>
+          <textarea name="orderDetails" value="" rows="5" cols="64" wrap="soft"></textarea><br><br>
+
+      <!-- Кнопку "Заплатить" можно назвать как угодно.
+          Например, "Оплатить подписку" или "Внести деньги"-->
+          <input type="submit" value="Заплатить">
+          </form>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
