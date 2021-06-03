@@ -1,3 +1,15 @@
+Куда кидать статику
+/sinica_artplace/Docker/sinica_artplace/sinica_proj/static/web/   -    в директории static создать папку web и туда ее кидать
+
+Куда кидать html
+/sinica_artplace/Docker/sinica_artplace/sinica_proj/templates/web/   -   тут уже лежит шаблон index.html, его можно заменить на что-нибудь нормальное
+
+Откуда брать картинки
+/sinica_artplace/Docker/sinica_artplace/sinica_proj/media/   -   на фронт будут прилетать относительные ссылки (напр. sinica_artplace/sinica_proj/media/test.jpg)
+
+
+Описание api
+
 /sinica  GET    -   отдается главная страница
 
 /sinica/admin   GET   -   админ панель
