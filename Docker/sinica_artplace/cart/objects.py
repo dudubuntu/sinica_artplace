@@ -10,6 +10,10 @@ from collections import OrderedDict
 SESSION_CART_KEY = settings.SESSION_CART_KEY
 
 
+class CartException(Exception):
+    pass
+
+
 class Cart:
     def __init__(self, request, model: Model):
         self.model = model
@@ -33,29 +37,44 @@ class Cart:
     def __len__(self):
         return sum([int(quantity) for quantity in self.session[SESSION_CART_KEY].values()])
 
-    def add(self, articul, quantity=1):                         #TODO добавить проверку на articul
-        articul = str(articul)
+    def add(self, articul:str, quantity:int=1):                         #TODO добавить проверку на articul
+        try:
+            articul = str(articul)
+            quantity = int(quantity)
+        except ValueError as exc:
+            raise CartException(exc)
+
+        if quantity < 0:
+            raise CartException('Quantity must be non-negative.')
+
         item = self.cart.get(articul)
 
         if item:
-            item_quantity = int(item)
-            self.cart[articul] += item_quantity
+            self.cart[articul] += quantity
         else:
             self.cart[articul] = quantity
 
         self.session[SESSION_CART_KEY] = self.cart
-        print(self.session[SESSION_CART_KEY])
         self.save()
 
-    def delete(self, articul, del_quantity:int=None):
-        if del_quantity is not None:
+    def delete(self, articul:str, del_quantity=None):
+        if del_quantity is None:
+            self.cart.pop(str(articul))
+        else:
+            try:
+                articul = str(articul)
+                del_quantity = int(del_quantity)
+            except ValueError as exc:
+                raise CartException(exc)
+
+            if del_quantity < 0:
+                raise CartException('Quantity must be non-negative.')
+
             quantity = int(self.cart[articul]) - del_quantity
             if quantity == 0:
                 self.cart.pop(str(articul))
             else:
-                self.cart[articul] = quantity             #TODO добавить проверки на присланные значения
-        else:
-            self.cart.pop(str(articul))
+                self.cart[articul] = quantity
         
         self.session[SESSION_CART_KEY] = self.cart
         self.save()
