@@ -124,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = 'sinica/static/'
+STATIC_URL = '/static/'
 STATIC_DIR = PROJECT_ROOT / 'static'
 STATIC_ROOT = STATIC_DIR
 # STATICFILES_DIRS = [
@@ -132,7 +132,7 @@ STATIC_ROOT = STATIC_DIR
 # ]
 
 
-MEDIA_URL = 'sinica/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = PROJECT_ROOT / 'media'
 
 # Default primary key field type
