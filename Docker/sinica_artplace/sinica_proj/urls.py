@@ -20,11 +20,11 @@ from django.conf.urls import static
 from django.conf import settings
 
 urlpatterns = [
-    path('sinica/admin/', admin.site.urls),
-    path('sinica/api-auth/', include('rest_framework.urls')),
+    path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
 
-    path('sinica/', include('web.urls')),
-    path('sinica/api/v1/', include('api.urls')),
+    path('', include('web.urls')),
+    path('api/v1/', include('api.urls')),
 
 ] + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
