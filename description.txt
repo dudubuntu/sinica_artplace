@@ -10,11 +10,11 @@
 
 Описание api
 
-/sinica  GET    -   отдается главная страница
+/  GET    -   отдается главная страница
 
-/sinica/admin   GET   -   админ панель
+/admin   GET   -   админ панель
 
-/sinica/api/v1/item_list   GET   - отдаются загруженные в базу курсы в формате json, пример:
+/api/v1/item_list   GET   - отдаются загруженные в базу курсы в формате json, пример:
 [
     {
         "articul": 1,
@@ -32,7 +32,7 @@
 Можно передавать параметр articul_list тогда вернет инфу по этим артикулам, напр /sinica/api/v1/item_list?articul_list
 
 
-/sinica/api/v1/cart/get_cart   GET   - возвращает корзину в формате json, пример:
+/api/v1/cart/get_cart   GET   - возвращает корзину в формате json, пример:
 {
     "length": 6,
     "articul_list": [
@@ -47,7 +47,7 @@
     ]
 }
 
-/sinica/api/v1/cart/add_item   POST   -   принимает json вида {"articul: int": quantity} и добавляет этот артикул в корзину.  Нельзя передавать несколько артикулов, для этого нужно посылать разные запросы. Возвращает корзину
+/api/v1/cart/add_item   POST   -   принимает json вида {"articul: int": quantity} и добавляет этот артикул в корзину.  Нельзя передавать несколько артикулов, для этого нужно посылать разные запросы. Возвращает корзину
 
-/sinica/api/v1/cart/delete_tem   PUT   -   аналогично, но удаляет элемент. Возвращает корзину
-/sinica/api/v1/cart/clear_cart   DELETE   -   очищает корзину и возвращает ее (length=0, item_list=[])
+/api/v1/cart/delete_tem   PUT   -   аналогично, но удаляет элемент. Возвращает корзину
+/api/v1/cart/clear_cart   DELETE   -   очищает корзину и возвращает ее (length=0, item_list=[])
