@@ -10,6 +10,9 @@
 
 Описание api
 
+/contact_us/leave_request   POST   -   оставить заявку на обратную связь. Возвращает 200 статус
+    2 обязательных поля: name, phone_number
+
 /sinica  GET    -   отдается главная страница
 
 /sinica/admin   GET   -   админ панель

@@ -1,5 +1,24 @@
 services:
 
+    redis:
+        image: redis
+        ports:
+            - 6379:6379
+        restart: always
+
+    celery:
+        build:
+            context: ./Docker/sinica_artplace/
+            dockerfile: Dockerfile
+        command: celery -A sinica_proj worker -l INFO
+        volumes:
+            - ./Docker/sinica_artplace/:/usr/src/app/
+        restart: always
+        links:
+            - redis
+        depends_on:
+            - redis
+
     sinica_artplace_web:
         build:
             context: ./Docker/sinica_artplace/
@@ -9,11 +28,17 @@ services:
             - DJANGO_SUPERUSER_PASSWORD=1234
             - DJANGO_SUPERUSER_USERNAME=admin
             - DJANGO_SUPERUSER_EMAIL=mes.disco@gmail.com
+        restart: always
         volumes:
             - ./Docker/sinica_artplace/:/usr/src/app/
         ports:
             - "8000:8000"
-
+        links:
+            - redis
+            - celery
+        depends_on:
+            - redis
+            - celery
 
     nginx:
         build:
@@ -23,9 +48,14 @@ services:
             - ./Docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
             - ./Docker/sinica_artplace/sinica_proj/static/:/static/
             - ./Docker/sinica_artplace/sinica_proj/media/:/media/
-        links:
-            - sinica_artplace_web
         ports:
             - "80:80"
+        restart: always
+        links:
+            - sinica_artplace_web
+            - redis
+            - celery
         depends_on:
             - sinica_artplace_web
+            - redis
+            - celery

@@ -37,7 +37,7 @@ class Cart:
     def __len__(self):
         return sum([int(quantity) for quantity in self.session[SESSION_CART_KEY].values()])
 
-    def add(self, articul:str, quantity:int=1):                         #TODO добавить проверку на articul
+    def add(self, articul:str, quantity:int=1):
         try:
             articul = str(articul)
             quantity = int(quantity)

@@ -45,7 +45,13 @@
           Например, "Оплатить подписку" или "Внести деньги"-->
           <input type="submit" value="Заплатить">
           </form>
-
+    <div class='container'>
+      <form action='contact_us/leave_request/' method='post'>
+      {% csrf_token %}
+      {{form}}
+      <button type='submit'>отправить</form>
+      </form>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
