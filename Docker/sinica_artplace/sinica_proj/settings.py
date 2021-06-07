@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'celery',
+    'django_celery_results',
 
     'web',
     'api',
+    'contactus',
 ]
 
 MIDDLEWARE = [
@@ -144,4 +147,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SESSION_CART_KEY = 'cart'
 
-# Cart Settings
+
+# CELERY SETTINGS
+
+CELERY_TIMEZONE = "Europe/Moscow"
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_BROKER_URL = "redis://redis:6379/0"
+
+
+# MAIL SETTINGS
+
+DEFAULT_FROM_EMAIL = 'piligrim021@gmail.com' #добавить импорт из переменных окружения
+EMAIL_HOST_USER = 'piligrim021@gmail.com'
+EMAIL_HOST_PASSWORD = 'njwpixmimnundeoo'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

@@ -14,19 +14,27 @@ class CartApiView(APIView):
         return Response(data=cart.get_json_cart())
 
     def post(self, request: HttpRequest, *args, **kwargs):
-        """add item to cart"""
+        """add item to cart
+        {"articul": "1000", extra: {"quantity": "100", "price": "10000"}}
+        """
         cart = Cart(request, Item)
-        articul, quantity = request.data.popitem()
+
         try:
-            cart.add(articul, quantity)
+            articul, extra = request.data['articul'], request.data['extra']
+            cart.add(articul, price=extra['price'], quantity=extra['quantity'])
         except CartException as exc:
             return Response(data={"error": f'CartException: {str(exc)}'}, status=status.HTTP_400_BAD_REQUEST)
+        except KeyError as exc:
+            return Response(data={"error": f'{str(exc)}'}, status=status.HTTP_400_BAD_REQUEST)
+
         return Response(data=cart.get_json_cart(), status=status.HTTP_200_OK)
 
     def put(self, request, *args, **kwargs):
-        """delete item from cart"""
+        """delete item from cart
+        {"articul": "1000", "quantity": "100"}
+        """
         cart = Cart(request, Item)
-        articul, quantity = request.data.popitem()
+        articul, quantity = request.data.values()
         try:
             cart.delete(articul, quantity)
         except CartException as exc:
