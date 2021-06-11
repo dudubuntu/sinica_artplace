@@ -22,12 +22,13 @@
     {
         "articul": 1,
         "name": "Робототехника",
+        "poster": "/sinica/media/poster.jpeg",
+        "author_img": "/sinica/media/author.jpeg",
         "description": "-",
         "price": 5000.0,
-        "action": false,
+        "action": false,        #использовать ли акционную цену (у нас не реализовано)
         "previous_price": null,
         "event_date": null,
-        "img": "/sinica/media/7V0WoVKbBXk_UmxGfDL.jpeg"
     },
     {
     },
