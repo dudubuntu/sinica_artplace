@@ -39,19 +39,34 @@
 
 /api/v1/cart/get_cart   GET   - возвращает корзину в формате json, пример:
 {
-    "length": 47,
-    "total_price": 6498,
+    "length": 10,
+    "total_price": 1000,
     "articul_list": [
-        [
-            "1000",
-            {
-                "quantity": 40,
-                "price": 100
-            }
-        ],
+        {
+            "articul": "1001",
+            "quantity": 10,
+            "price": 100
+        }
+    ]
 }
 
-/api/v1/cart/add_item   POST   -   принимает json вида {"articul": "str": "quantity": "int"} и добавляет этот артикул в корзину.  Нельзя передавать несколько артикулов, для этого нужно посылать разные запросы. Возвращает корзину
+/api/v1/cart/add_item   POST   -   принимает json вида
+    
+    {"articul": "1001", "extra": {"quantity": "10", "price": "100"}}
+    
+    и добавляет этот артикул в корзину.  Нельзя передавать несколько артикулов, для этого нужно посылать разные запросы. Возвращает корзину
 
-/api/v1/cart/delete_tem   PUT   -   аналогично, но удаляет элемент. Возвращает корзину
-/api/v1/cart/clear_cart   DELETE   -   очищает корзину и возвращает ее (length=0, item_list=[])
+
+/api/v1/cart/delete_tem   PUT   -   принимает json вида
+    
+    {"articul": "1000", "quantity": "100"}
+    
+    и удаляет элемент. Возвращает корзину
+
+
+/api/v1/cart/clear_cart   DELETE   -   очищает корзину и возвращает ее 
+{
+    "length": 0,
+    "total_price": 0,
+    "articul_list": []
+}
