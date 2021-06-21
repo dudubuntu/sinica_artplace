@@ -13,6 +13,6 @@ class ContactUsView(APIView):
         form = ContactUsForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return Response(status=status.HTTP_201_CREATED)
+            return Response(data={"message": "Ваш запрос принят. Ожидайте звонка"}, status=status.HTTP_201_CREATED)
         else:
             return Response(data={"error": form.errors}, status=status.HTTP_400_BAD_REQUEST)
