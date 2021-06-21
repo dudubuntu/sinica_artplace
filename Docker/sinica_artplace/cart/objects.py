@@ -77,8 +77,14 @@ class Cart:
             except (ValueError, TypeError) as exc:
                 raise CartException(exc)
 
+            if not articul in self.cart.keys():
+                raise CartException('No such articul in the cart.')
+
             if del_quantity < 0:
                 raise CartException('Quantity must be non-negative.')
+            
+            if del_quantity > self.cart[articul]['quantity']:
+                raise CartException('Quantity to delete must be equal or less quantity of items in the cart.')
 
             quantity = int(self.cart[articul]['quantity']) - del_quantity
             if quantity == 0:
@@ -101,7 +107,12 @@ class Cart:
         """Return str json formatted
         {"length": int, "articul_list": [{"articul: int": "quantity: int"}, {...}, ]}
         """
-        return {'length': len(self), 'total_price': self.get_total_price(), 'articul_list': [item for item in self.cart.items()]}
+        items = self.cart.items()
+        if items:
+            articul_list = [{'articul': item[0], 'quantity': item[1]['quantity'], 'price': item[1]['price']} for item in items]
+        else:
+            articul_list = []
+        return {'length': len(self), 'total_price': self.get_total_price(), 'articul_list': articul_list}
 
     # def get_total_price(self):          TODO допилить функцию
     #     return sum([price * quantity for price, quantity in self.session[SESSION_CART_KEY].items()])
