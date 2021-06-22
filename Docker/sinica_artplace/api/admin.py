@@ -51,3 +51,6 @@ class ItemAdmin(admin.ModelAdmin):
             'fields': (('published', 'created', 'updated'),),
         })
     )
+
+
+admin.site.register(Review)

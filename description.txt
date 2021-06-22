@@ -37,6 +37,22 @@
 Можно передавать параметр articul_list тогда вернет инфу по этим артикулам, напр /sinica/api/v1/item_list?articul_list
 
 
+/api/v1/review_list   GET   -   отдаются отзывы в виде объектов
+[
+    {
+        "name": "denis",
+        "text": "Все хорошо, все хорошо",
+        "img": "http://localhost:8000/media/Screenshot_at_Jun_23_00-24-10.png"
+    },
+    {
+        "name": "Эльдар",
+        "text": "Ну я как препод считаю, что хуйню делаю",
+        "img": "http://localhost:8000/media/Screenshot_at_Jun_23_00-24-10_HdR4Nf7.png"
+    }
+]
+
+
+
 /api/v1/cart/get_cart   GET   - возвращает корзину в формате json, пример:
 {
     "length": 10,

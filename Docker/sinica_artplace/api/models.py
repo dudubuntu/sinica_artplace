@@ -23,3 +23,16 @@ class Item(models.Model):
         ordering = ('articul',)
         verbose_name = 'Курс'
         verbose_name_plural = 'Курсы'
+
+
+class Review(models.Model):
+    name = models.CharField(max_length=50)
+    text = models.TextField(max_length=5000)
+    img = models.ImageField(upload_to='')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
