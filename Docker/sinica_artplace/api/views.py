@@ -4,6 +4,7 @@ from django.http import request
 
 from rest_framework.views import Response
 from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView
 
 from .models import Item
 from .serializers import *
@@ -22,3 +23,8 @@ class ItemApiView(APIView):
 class PurchaseApiView(APIView):
     def post(self, request):
         pass
+
+
+class ReviewApiView(ListAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
