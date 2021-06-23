@@ -6,13 +6,14 @@ from rest_framework.views import Response
 
 from .models import ContactUs
 from .forms import ContactUsForm
+from .serializers import ContactUsSerializer
 
 
 class ContactUsView(APIView):
     def post(self, request, *args, **kwargs):
-        form = ContactUsForm(data=request.POST)
-        if form.is_valid():
-            form.save()
+        serializer = ContactUsSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
             return Response(data={"message": "Ваш запрос принят. Ожидайте звонка"}, status=status.HTTP_201_CREATED)
         else:
-            return Response(data={"error": form.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(data={"error": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)

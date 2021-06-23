@@ -12,7 +12,7 @@ class ContactUs(models.Model):
     processed_at = models.DateTimeField(verbose_name='Когда обработана', blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        save_returned = super().save(args, kwargs)
+        save_returned = super(ContactUs, self).save(*args, **kwargs)
         task_send_email.delay(self.name, self.phone_number, self.created_at)
         return save_returned
 
