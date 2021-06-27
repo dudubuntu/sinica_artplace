@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/static/web/main.min.css"/>
-    <script src="static/web/main.min.js" defer=""></script>
+    <link rel="stylesheet" href="main.min.css"/>
+    <script src="main.min.js" defer=""></script>
     <title>Sinica</title>
-    <link rel="stylesheet" href="/static/web/resources/splide/splide.min.css"/>
-    <script src="/static/web/resources/splide/splide.min.js" defer=""></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD-N55uT4bDIwV7xqmwUvUvmUgohgWcBE&amp;callback=initMap" async="async" defer="defer"></script>
+    <link rel="stylesheet" href="./resources/splide/splide.min.css"/>
+    <script src="./resources/splide/splide.min.js" defer=""></script>
+    <script src="https://api-maps.yandex.ru/2.1/?&amp;lang=ru_RU" type="text/javascript"></script>
   </head>
   <body>
     <div>
@@ -34,7 +34,7 @@
               <button class="basket" type="button" id="basket">
                       <svg>
                         <use xlink:href="static/web/assets/icons/svg/sprite.svg#basket"></use>
-                      </svg>
+                      </svg><span id="basket-el-count">0</span>
               </button>
             </div>
           </div>
@@ -313,7 +313,7 @@
             </div>
             <div class="about__block">
               <div class="about-video">
-                <iframe src="https://www.youtube.com/embed/nZA7fdd90oU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rFv_CDJ-XBo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
               </div>
             </div>
           </div>
@@ -479,6 +479,10 @@
           </div>
         </form>
       </div>
+    </div>
+    <div class="modal_ok">
+      <h3 class="title">massage</h3>
+      <div class="btn">ок</div>
     </div>
   </body>
 </html>
