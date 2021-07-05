@@ -32,7 +32,7 @@ class ItemAdmin(admin.ModelAdmin):
     search_fields = ('articul', 'name', 'author', 'description')
     readonly_fields = ('created', 'updated')
     actions = [make_published, make_unpublished]
-    form = ItemAdminForm
+    # form = ItemAdminForm      #CKEditor
 
     fieldsets = (
         ('general', {
