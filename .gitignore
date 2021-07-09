@@ -2,6 +2,8 @@
 *migrations*
 *.DS_Store*
 db.sqlite3
+Docker/sinica_artplace/sinica_proj/media/*
 Docker/sinica_artplace/sinica_proj/static/admin/
 Docker/sinica_artplace/sinica_proj/static/ckeditor/
 Docker/sinica_artplace/sinica_proj/static/rest_framework/
+*.env*
