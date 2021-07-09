@@ -53,7 +53,7 @@
                     <svg>
                       <use xlink:href="static/web/assets/icons/svg/sprite.svg#down-arrow"></use>
                     </svg></a>
-          </div><img class="sinica" src="./assets/images/sinica.png"/>
+          </div><img class="sinica" src="static/web/assets/images/sinica.png"/>
         </section>
         <section class="s_courses section" id="s_courses">
           <div class="container">
@@ -63,182 +63,186 @@
                 <input type="checkbox" checked="checked" id="courses-slider-type"/>
                 <div class="courses-checkbox__style">         <span class="courses-checkbox__text">3d</span><span class="courses-checkbox__point"></span></div>
               </label>
-              <div class="courses">
-                <ul class="courses__list">
-                  <li class="courses__el">
-                    <div class="course-card">                 
-                      <div class="course-card_front">
-                        <div class="courses-flip">
-                                <svg class="courses-flip__arrow">
-                                  <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip-arrow"></use>
-                                </svg>
-                          <button class="courses-flip__btn">
-                                  <svg>
-                                    <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
+              <div class="splide" id="courses-slider">
+                <div class="courses-slider__btns">    
+                  <button class="courses-slider__btns_prev">
+                          <svg>
+                            <use xlink:href="static/web/assets/icons/svg/sprite.svg#right-arrow"></use>
+                          </svg>
+                  </button>
+                  <button class="courses-slider__btns_next">
+                          <svg>
+                            <use xlink:href="static/web/assets/icons/svg/sprite.svg#right-arrow"></use>
+                          </svg>
+                  </button>
+                </div>
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <div class="course-card">                 
+                        <div class="course-card_front">
+                          <div class="courses-flip">
+                                  <svg class="courses-flip__arrow">
+                                    <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip-arrow"></use>
                                   </svg>
-                          </button>
-                        </div>
-                        <div class="course-card__block">
-                          <h3 class="course-card__title">строение автомобиля</h3>
-                          <div class="course-card__img"><img class="card-img" src="static/web/assets/images/courses/машинка.png"/>
+                            <button class="courses-flip__btn">
+                                    <svg>
+                                      <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
+                                    </svg>
+                            </button>
                           </div>
-                          <div class="course-card__box">
-                            <div class="course-card__author-img"><img class="undefined" src="static/web/assets/images/courses/ден.jpg"/>
+                          <div class="course-card__block">
+                            <h3 class="course-card__title">строение автомобиля</h3>
+                            <div class="course-card__img"><img class="card-img" src="static/web/assets/images/courses/машинка.png"/>
                             </div>
-                            <div class="course-card__author"><span>автор:</span>
-                              <p>денис мещеряков</p>
+                            <div class="course-card__box">
+                              <div class="course-card__author-img"><img class="undefined" src="static/web/assets/images/courses/ден.jpg"/>
+                              </div>
+                              <div class="course-card__author"><span>автор:</span>
+                                <p>денис мещеряков</p>
+                              </div>
+                              <div class="course-card__price"> <span class="card-price">101</span><span>₽
+                                  <div class="hover-style">
+                                    <button class="hover-style__btn">подробнее
+                                            <svg>
+                                              <use xlink:href="static/web/assets/icons/svg/sprite.svg#hover_arrow"></use>
+                                            </svg>
+                                    </button>
+                                    <div class="hover-style__cont"> 
+                                      <h1>content </h1>
+                                    </div>
+                                  </div></span></div>
                             </div>
-                            <div class="course-card__price"> <span class="card-price">101</span><span>₽
-                                <div class="hover-style">
-                                  <button class="hover-style__btn">подробнее
-                                          <svg>
-                                            <use xlink:href="static/web/assets/icons/svg/sprite.svg#hover_arrow"></use>
-                                          </svg>
-                                  </button>
-                                  <div class="hover-style__cont"> 
-                                    <h1>content </h1>
-                                  </div>
-                                </div></span></div>
                           </div>
                         </div>
-                      </div>
-                      <div class="course-card_back"> 
-                        <h1>content</h1>
-                        <div class="courses-flip">
-                          <button class="courses-flip__btn">
-                                  <svg>
-                                    <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
-                                  </svg>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="btn btn_green buy">купить
-                            <svg>
-                              <use xlink:href="static/web/assets/icons/svg/sprite.svg#basket"></use>
-                            </svg>
-                    </button>
-                  </li>
-                  <li class="courses__el">
-                    <div class="course-card">                 
-                      <div class="course-card_front">
-                        <div class="courses-flip">
-                                <svg class="courses-flip__arrow">
-                                  <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip-arrow"></use>
-                                </svg>
-                          <button class="courses-flip__btn">
-                                  <svg>
-                                    <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
-                                  </svg>
-                          </button>
-                        </div>
-                        <div class="course-card__block">
-                          <h3 class="course-card__title">робототехника</h3>
-                          <div class="course-card__img"><img class="card-img" src="static/web/assets/images/courses/робот.png"/>
-                          </div>
-                          <div class="course-card__box">
-                            <div class="course-card__author-img"><img class="undefined" src="static/web/assets/images/courses/алим.jpg"/>
-                            </div>
-                            <div class="course-card__author"><span>автор:</span>
-                              <p>алим мамбетов</p>
-                            </div>
-                            <div class="course-card__price"> <span class="card-price">9999</span><span>₽
-                                <div class="hover-style">
-                                  <button class="hover-style__btn">подробнее
-                                          <svg>
-                                            <use xlink:href="static/web/assets/icons/svg/sprite.svg#hover_arrow"></use>
-                                          </svg>
-                                  </button>
-                                  <div class="hover-style__cont"> 
-                                    <h1>content </h1>
-                                  </div>
-                                </div></span></div>
+                        <div class="course-card_back"> 
+                          <h1>content</h1>
+                          <div class="courses-flip">
+                            <button class="courses-flip__btn">
+                                    <svg>
+                                      <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
+                                    </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
-                      <div class="course-card_back"> 
-                        <h1>content</h1>
-                        <div class="courses-flip">
-                          <button class="courses-flip__btn">
-                                  <svg>
-                                    <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
+                      <button class="btn btn_green buy">купить
+                              <svg>
+                                <use xlink:href="static/web/assets/icons/svg/sprite.svg#basket"></use>
+                              </svg>
+                      </button>
+                    </li>
+                    <li class="splide__slide">
+                      <div class="course-card">                 
+                        <div class="course-card_front">
+                          <div class="courses-flip">
+                                  <svg class="courses-flip__arrow">
+                                    <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip-arrow"></use>
                                   </svg>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="btn btn_green buy">купить
-                            <svg>
-                              <use xlink:href="static/web/assets/icons/svg/sprite.svg#basket"></use>
-                            </svg>
-                    </button>
-                  </li>
-                  <li class="courses__el">
-                    <div class="course-card">                 
-                      <div class="course-card_front">
-                        <div class="courses-flip">
-                                <svg class="courses-flip__arrow">
-                                  <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip-arrow"></use>
-                                </svg>
-                          <button class="courses-flip__btn">
-                                  <svg>
-                                    <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
-                                  </svg>
-                          </button>
-                        </div>
-                        <div class="course-card__block">
-                          <h3 class="course-card__title">3d печать</h3>
-                          <div class="course-card__img"><img class="card-img" src="static/web/assets/images/courses/принтер.png"/>
+                            <button class="courses-flip__btn">
+                                    <svg>
+                                      <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
+                                    </svg>
+                            </button>
                           </div>
-                          <div class="course-card__box">
-                            <div class="course-card__author-img"><img class="undefined" src="static/web/assets/images/courses/катя.jpg"/>
+                          <div class="course-card__block">
+                            <h3 class="course-card__title">робототехника</h3>
+                            <div class="course-card__img"><img class="card-img" src="static/web/assets/images/courses/робот.png"/>
                             </div>
-                            <div class="course-card__author"><span>автор:</span>
-                              <p>екатерина маслова</p>
+                            <div class="course-card__box">
+                              <div class="course-card__author-img"><img class="undefined" src="static/web/assets/images/courses/алим.jpg"/>
+                              </div>
+                              <div class="course-card__author"><span>автор:</span>
+                                <p>алим мамбетов</p>
+                              </div>
+                              <div class="course-card__price"> <span class="card-price">9999</span><span>₽
+                                  <div class="hover-style">
+                                    <button class="hover-style__btn">подробнее
+                                            <svg>
+                                              <use xlink:href="static/web/assets/icons/svg/sprite.svg#hover_arrow"></use>
+                                            </svg>
+                                    </button>
+                                    <div class="hover-style__cont"> 
+                                      <h1>content </h1>
+                                    </div>
+                                  </div></span></div>
                             </div>
-                            <div class="course-card__price"> <span class="card-price">100</span><span>₽
-                                <div class="hover-style">
-                                  <button class="hover-style__btn">подробнее
-                                          <svg>
-                                            <use xlink:href="static/web/assets/icons/svg/sprite.svg#hover_arrow"></use>
-                                          </svg>
-                                  </button>
-                                  <div class="hover-style__cont"> 
-                                    <h1>content </h1>
-                                  </div>
-                                </div></span></div>
                           </div>
                         </div>
-                      </div>
-                      <div class="course-card_back"> 
-                        <h1>content</h1>
-                        <div class="courses-flip">
-                          <button class="courses-flip__btn">
-                                  <svg>
-                                    <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
-                                  </svg>
-                          </button>
+                        <div class="course-card_back"> 
+                          <h1>content</h1>
+                          <div class="courses-flip">
+                            <button class="courses-flip__btn">
+                                    <svg>
+                                      <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
+                                    </svg>
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <button class="btn btn_green buy">купить
-                            <svg>
-                              <use xlink:href="static/web/assets/icons/svg/sprite.svg#basket"></use>
-                            </svg>
-                    </button>
-                  </li>
-                </ul>
+                      <button class="btn btn_green buy">купить
+                              <svg>
+                                <use xlink:href="static/web/assets/icons/svg/sprite.svg#basket"></use>
+                              </svg>
+                      </button>
+                    </li>
+                    <li class="splide__slide">
+                      <div class="course-card">                 
+                        <div class="course-card_front">
+                          <div class="courses-flip">
+                                  <svg class="courses-flip__arrow">
+                                    <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip-arrow"></use>
+                                  </svg>
+                            <button class="courses-flip__btn">
+                                    <svg>
+                                      <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
+                                    </svg>
+                            </button>
+                          </div>
+                          <div class="course-card__block">
+                            <h3 class="course-card__title">3d печать</h3>
+                            <div class="course-card__img"><img class="card-img" src="static/web/assets/images/courses/принтер.png"/>
+                            </div>
+                            <div class="course-card__box">
+                              <div class="course-card__author-img"><img class="undefined" src="static/web/assets/images/courses/катя.jpg"/>
+                              </div>
+                              <div class="course-card__author"><span>автор:</span>
+                                <p>екатерина маслова</p>
+                              </div>
+                              <div class="course-card__price"> <span class="card-price">100</span><span>₽
+                                  <div class="hover-style">
+                                    <button class="hover-style__btn">подробнее
+                                            <svg>
+                                              <use xlink:href="static/web/assets/icons/svg/sprite.svg#hover_arrow"></use>
+                                            </svg>
+                                    </button>
+                                    <div class="hover-style__cont"> 
+                                      <h1>content </h1>
+                                    </div>
+                                  </div></span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="course-card_back"> 
+                          <h1>content</h1>
+                          <div class="courses-flip">
+                            <button class="courses-flip__btn">
+                                    <svg>
+                                      <use xlink:href="static/web/assets/icons/svg/sprite.svg#flip"></use>
+                                    </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn btn_green buy">купить
+                              <svg>
+                                <use xlink:href="static/web/assets/icons/svg/sprite.svg#basket"></use>
+                              </svg>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <button class="courses-slider__btns courses-slider__btns_prev">
-                      <svg>
-                        <use xlink:href="static/web/assets/icons/svg/sprite.svg#right-arrow"></use>
-                      </svg>
-              </button>
-              <button class="courses-slider__btns courses-slider__btns_next">
-                      <svg>
-                        <use xlink:href="static/web/assets/icons/svg/sprite.svg#right-arrow"></use>
-                      </svg>
-              </button>
             </div>
           </div>
         </section>
@@ -313,7 +317,7 @@
             </div>
             <div class="about__block">
               <div class="about-video">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rFv_CDJ-XBo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+                <iframe width="100%" height="100%" src="http://www.youtube.com/embed/8EAjUeBfweU" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
               </div>
             </div>
           </div>
